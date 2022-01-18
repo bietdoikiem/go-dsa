@@ -12,6 +12,8 @@ import "fmt"
 */
 
 type ArrayStack[T any] struct {
+	size int
+
 	items []T
 }
 
