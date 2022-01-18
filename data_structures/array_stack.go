@@ -1,14 +1,5 @@
 package data_structures
 
-/*
-	Implementation of the Stack data structure using Golang
-	Methods:
-	+ Push
-	+ Pop
-	+ Peek
-	+ Clear
-*/
-
 type ArrayStack[T any] struct {
 	capacity int
 	size     int
