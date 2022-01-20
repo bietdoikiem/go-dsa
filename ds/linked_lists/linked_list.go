@@ -12,8 +12,8 @@ type LinkedListNode[T comparable] struct {
 }
 
 // NewLinkedListNode creates a new node
-func NewLinkedListNode[T comparable](value T) *LinkedListNode[T] {
-	return &LinkedListNode[T]{value: value}
+func NewLinkedListNode[T comparable](value T) LinkedListNode[T] {
+	return LinkedListNode[T]{value: value}
 }
 
 // a LinkedList contains a list of nodes and a reference to the head
@@ -23,15 +23,16 @@ type LinkedList[T comparable] struct {
 }
 
 // NewLinkedList initiates an empty linked list
-func NewLinkedList[T comparable]() *LinkedList[T] {
-	return &LinkedList[T]{}
+func NewLinkedList[T comparable]() LinkedList[T] {
+	return LinkedList[T]{}
 }
 
 // Insert inserts a new node to the linked list
 func (l *LinkedList[T]) Insert(value T) {
+	inserted := NewLinkedListNode(value)
 	// 1. Insert at head
 	if l.head == nil {
-		l.head = NewLinkedListNode(value)
+		l.head = &inserted
 		l.size += 1
 		return
 	}
@@ -44,7 +45,7 @@ func (l *LinkedList[T]) Insert(value T) {
 		prev = cur
 		cur = cur.next
 	}
-	prev.next = NewLinkedListNode(value)
+	prev.next = &inserted
 	l.size += 1
 }
 

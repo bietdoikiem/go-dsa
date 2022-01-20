@@ -8,8 +8,8 @@ type ArrayStack[T any] struct {
 }
 
 // NewArrayStack function returns a pointer to a newly created Stack using array
-func NewArrayStack[T any](capacity int) *ArrayStack[T] {
-	return &ArrayStack[T]{capacity: capacity, size: 0, top: -1, items: make([]T, capacity)}
+func NewArrayStack[T any](capacity int) ArrayStack[T] {
+	return ArrayStack[T]{capacity: capacity, size: 0, top: -1, items: make([]T, capacity)}
 }
 
 // Push pushes the specified item onto the top of the stack
