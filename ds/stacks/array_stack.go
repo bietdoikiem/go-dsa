@@ -1,4 +1,4 @@
-package data_structures
+package stacks
 
 type ArrayStack[T any] struct {
 	capacity int
