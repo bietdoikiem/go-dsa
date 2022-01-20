@@ -89,12 +89,6 @@ func (l *LinkedList[T]) DeleteByKey(value T) (*T, error) {
 
 // DeleteByIndex deletes a node in the list by its index/position
 func (l *LinkedList[T]) DeleteByIndex(index int) (*T, error) {
-	// TODO: Implement delete by index operation
-	/*
-		Idea:
-		1. index = size - 1
-		2. loop until we got the index, then delete with the following 3 cases as above
-	*/
 	// Check for empty list
 	if l.head == nil {
 		return nil, errors.New("Linked list is empty")
