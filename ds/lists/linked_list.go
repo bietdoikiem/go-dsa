@@ -28,6 +28,10 @@ func NewLinkedList[T comparable]() LinkedList[T] {
 }
 
 // Insert inserts a new node to the linked list
+// Time complexity:
+// 1. O(1) - Insert at root
+// 2. O(n) - Insert at middle
+// 3. O(n) - Insert at tail (can be improved to O(1) if tail pointer is tracked)
 func (l *LinkedList[T]) Insert(value T) {
 	inserted := NewLinkedListNode(value)
 	// 1. Insert at head
@@ -50,6 +54,10 @@ func (l *LinkedList[T]) Insert(value T) {
 }
 
 // DeleteByKey deletes a node in the list by its value
+// Time complexity:
+// 1. O(1) - Delete at first key
+// 2. O(n) - Delete at middle
+// 3. O(n) - Delete at tail
 func (l *LinkedList[T]) DeleteByKey(value T) (*T, error) {
 	// Check for empty list
 	if l.head == nil {
@@ -89,6 +97,10 @@ func (l *LinkedList[T]) DeleteByKey(value T) (*T, error) {
 }
 
 // DeleteByIndex deletes a node in the list by its index/position
+// Time complexity:
+// 1. O(1) - Delete at index 0th
+// 2. O(n) - Delete at middle index
+// 3. O(n) - Delete at last index (tail)
 func (l *LinkedList[T]) DeleteByIndex(index int) (*T, error) {
 	// Check for empty list
 	if l.head == nil {

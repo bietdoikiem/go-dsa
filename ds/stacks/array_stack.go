@@ -38,6 +38,7 @@ func (s *ArrayStack[T]) Pop() (T, error) {
 }
 
 // Peek reviews the last added item in the stack
+// Time complexity: O(1)
 func (s *ArrayStack[T]) Peek() T {
 	return s.items[s.size-1]
 }
