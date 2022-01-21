@@ -1,6 +1,7 @@
 package stacks
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -15,14 +16,17 @@ func Test_array_stack(t *testing.T) {
 	stack.Push(4)
 	stack.Push(5)
 	// Assert Push
-	assert.Equal(stack.size, 5, "Stack size should be 5.")
-	assert.Equal(stack.top, 4, "Top item index should be 4.")
+	assert.Equal(uint(5), stack.size, "Stack size should be 5.")
 	// Assert Peek
-	assert.Equal(stack.Peek(), stack.items[stack.top], "Peeked item should be the top one in the array.")
+	assert.Equal(stack.items[stack.size-1], stack.Peek(), "Peeked item should be the top one in the array.")
 	// Assert Pop
-	topItem := stack.items[stack.top]
-	popItem := stack.Pop()
-	assert.Equal(stack.size, 4, "Stack size should be 4 after popping last item.")
-	assert.Equal(stack.top, 3, "Top item index should be 4 after popping last item.")
-	assert.Equal(popItem, topItem, "Popped item should be equal to the previously top one.")
+	topItem := stack.items[stack.size-1]
+	popItem, err := stack.Pop()
+	if err != nil {
+		fmt.Println(err)
+	}
+	assert.Equal(uint(4), stack.size, "Stack size should be 4 after popping last item.")
+	assert.Equal(topItem, popItem, "Popped item should be equal to the previously top one.")
+	stack.Push(6) // Push again
+	fmt.Println("Last Pushed Item:", stack.items[stack.size-1])
 }

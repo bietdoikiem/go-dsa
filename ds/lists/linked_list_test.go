@@ -1,4 +1,4 @@
-package linked_lists
+package lists
 
 import (
 	"fmt"
@@ -21,29 +21,29 @@ func Test_linked_list(t *testing.T) {
 	assert.Equal(list.size, 5, "Size should be 5 after insertion.")
 	// DeleteByKey Test
 	// 1st Key deleted
-	d1, err1 := list.DeleteByKey(1)
-	if err1 != nil {
-		fmt.Println(err1)
+	d1, err := list.DeleteByKey(1)
+	if err != nil {
+		fmt.Println(err)
 	}
 	fmt.Printf("Deleted value is %v \n", *d1)
 	// 4th key deleted
-	d2, err2 := list.DeleteByKey(4)
-	if err2 != nil {
-		fmt.Println(err2)
+	d2, err := list.DeleteByKey(4)
+	if err != nil {
+		fmt.Println(err)
 	}
 	fmt.Printf("Deleted value is %v \n", *d2)
-	_, err3 := list.DeleteByKey(4) // Delete un-existing value
-	if err3 != nil {
-		fmt.Println(err3)
+	_, err = list.DeleteByKey(4) // Delete un-existing value
+	if err != nil {
+		fmt.Println(err)
 	}
 	fmt.Print("List items after delete by keys 1 and 4: ")
 	displayIntList(list)
 	assert.Equal(list.size, 3, "Size should be 3 after removing two keys.")
 	// DeleteByIndex Test
 	// Index 1st text
-	d4, err4 := list.DeleteByIndex(0)
-	if err4 != nil {
-		fmt.Println(err4)
+	d4, err := list.DeleteByIndex(0)
+	if err != nil {
+		fmt.Println(err)
 	}
 	fmt.Printf("Deleted value is %v \n", *d4)
 	fmt.Print("List items after delete by index 0th: ")

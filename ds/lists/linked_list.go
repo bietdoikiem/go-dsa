@@ -1,4 +1,4 @@
-package linked_lists
+package lists
 
 import (
 	"errors"
