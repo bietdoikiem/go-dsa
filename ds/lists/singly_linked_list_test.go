@@ -10,7 +10,7 @@ import (
 func Test_linked_list(t *testing.T) {
 	// Init Assertion lib
 	assert := assert.New(t)
-	list := NewLinkedList[int]()
+	list := NewSinglyLinkedList[int]()
 	list.Insert(1)
 	list.Insert(2)
 	list.Insert(3)
@@ -52,7 +52,7 @@ func Test_linked_list(t *testing.T) {
 }
 
 // displayIntList shows a list of all integer items of the given list
-func displayIntList(l LinkedList[int]) {
+func displayIntList(l SinglyLinkedList[int]) {
 	if l.head == nil {
 		fmt.Print("List is currently empty!")
 		return
