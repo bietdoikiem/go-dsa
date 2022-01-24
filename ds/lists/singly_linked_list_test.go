@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func Test_linked_list(t *testing.T) {
+func Test_singly_linked_list(t *testing.T) {
 	// Init Assertion lib
 	assert := assert.New(t)
 	list := NewSinglyLinkedList[int]()
@@ -17,7 +17,7 @@ func Test_linked_list(t *testing.T) {
 	list.Insert(4)
 	list.Insert(5)
 	fmt.Print("List items after insertion: ")
-	displayIntList(list)
+	DisplaySinglyLinkedList(list)
 	assert.Equal(list.size, 5, "Size should be 5 after insertion.")
 	// DeleteByKey Test
 	// 1st Key deleted
@@ -37,7 +37,7 @@ func Test_linked_list(t *testing.T) {
 		fmt.Println(err)
 	}
 	fmt.Print("List items after delete by keys 1 and 4: ")
-	displayIntList(list)
+	DisplaySinglyLinkedList(list)
 	assert.Equal(list.size, 3, "Size should be 3 after removing two keys.")
 	// DeleteByIndex Test
 	// Index 1st text
@@ -47,20 +47,6 @@ func Test_linked_list(t *testing.T) {
 	}
 	fmt.Printf("Deleted value is %v \n", *d4)
 	fmt.Print("List items after delete by index 0th: ")
-	displayIntList(list)
+	DisplaySinglyLinkedList(list)
 	assert.Equal(list.size, 2, "Size should be 2 after removing the 0th index element")
-}
-
-// displayIntList shows a list of all integer items of the given list
-func displayIntList(l SinglyLinkedList[int]) {
-	if l.head == nil {
-		fmt.Print("List is currently empty!")
-		return
-	}
-	cur := l.head
-	for cur != nil {
-		fmt.Print(cur.value, " ")
-		cur = cur.next
-	}
-	fmt.Println("")
 }

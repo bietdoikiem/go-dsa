@@ -7,13 +7,13 @@ import (
 
 // a SinglyLinkedListNode contains the actual value and the reference to the next node
 type SinglyLinkedListNode[T comparable] struct {
-	value T
-	next  *SinglyLinkedListNode[T]
+	Node[T]
+	next *SinglyLinkedListNode[T]
 }
 
 // NewSinglyLinkedListNode creates a new node
 func NewSinglyLinkedListNode[T comparable](value T) SinglyLinkedListNode[T] {
-	return SinglyLinkedListNode[T]{value: value}
+	return SinglyLinkedListNode[T]{Node: Node[T]{value}}
 }
 
 // a SinglyLinkedList contains a list of nodes and a reference to the head
@@ -29,9 +29,8 @@ func NewSinglyLinkedList[T comparable]() SinglyLinkedList[T] {
 
 // Insert inserts a new node to the linked list
 // Time complexity:
-// 1. O(1) - Insert at root
-// 2. O(n) - Insert at middle
-// 3. O(n) - Insert at tail (can be improved to O(1) if tail pointer is tracked)
+// 1. O(1) - Insert at root (as 1st element)
+// 2. O(n) - Insert at middle or tail (can be improved with tail pointer)
 func (l *SinglyLinkedList[T]) Insert(value T) {
 	inserted := NewSinglyLinkedListNode(value)
 	// 1. Insert at head
@@ -65,28 +64,28 @@ func (l *SinglyLinkedList[T]) DeleteByKey(value T) (*T, error) {
 	}
 	var deleted *T
 	// Delete at head-only list
-	if l.head.next == nil {
+	if l.size == 1 && l.head.value == value && l.head.next == nil {
 		deleted = &l.head.value
-		l.head = nil // Set to nil for garbage collector
+		l.head = nil
 		l.size -= 1
 		return deleted, nil
 	}
-	var prev *SinglyLinkedListNode[T]
-	cur := l.head
 	// Delete at head
-	if cur.value == value {
-		deleted = &cur.value
-		l.head = cur.next
-		cur = nil // Set to nil for garbage collector
+	if l.head.value == value {
+		deleted = &l.head.value
+		l.head = l.head.next
 		l.size -= 1
 		return deleted, nil
 	}
 	// Delete at body
+	var prev *SinglyLinkedListNode[T]
+	cur := l.head
 	for cur != nil {
+		// If found
 		if cur.value == value {
 			deleted = &cur.value
 			prev.next = cur.next
-			cur = nil // Set to nil for garbage collector
+			cur = nil
 			l.size -= 1
 			return deleted, nil
 		}

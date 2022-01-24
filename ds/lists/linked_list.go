@@ -1,6 +1,10 @@
 package lists
 
-type LinkedList interface {
+type Node[T comparable] struct {
+	value T
+}
+
+type LinkedList[T comparable] interface {
 	Insert()
 	DeleteByKey()
 	DeleteByIndex()
