@@ -88,6 +88,8 @@ func (l *DoublyLinkedList[T]) DeleteByKey(value T) (*T, error) {
 	return nil, fmt.Errorf("doublylinkedlist error: key %v does not exist", value)
 }
 
+// DeleteByIndex deletes an element from the list by specified index
+// Time complexity: O(n)
 func (l *DoublyLinkedList[T]) DeleteByIndex(index int) (*T, error) {
 	var deleted *T
 	// Check empty list
@@ -119,28 +121,22 @@ func (l *DoublyLinkedList[T]) DeleteByIndex(index int) (*T, error) {
 	cur := l.head.next
 	i := 1
 	for cur != nil {
-		// If index matched, break loop
-		fmt.Println("Current value", cur.value)
 		if index == i && cur.next == nil {
-			fmt.Println("Hello I'm here")
 			deleted = &l.head.value
-			prev.next = nil
-			l.size -= 1
-			break
-		}
-		if index == i && cur.next != nil {
-			fmt.Println("I'm in this function ftw!")
-			deleted = &l.head.value
-			next := cur.next
-			prev.next = next
-			next.prev = prev
-			l.size -= 1
+			if cur.next == nil {
+				prev.next = nil
+			} else {
+				next := cur.next
+				prev.next = next
+				next.prev = prev
+			}
 			break
 		}
 		prev = cur
 		cur = cur.next
 		i += 1
 	}
+	l.size -= 1
 	return deleted, nil
 }
 
