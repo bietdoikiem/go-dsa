@@ -5,4 +5,4 @@
 
 ## Introduction
 
-Hi everyone, this is my repository which indicates my whole learning progress in the awesome Golang. The repository includes tons of data structures and algorithms implemented with Golang for study purpose!
+Hello everyone, this is my repository which indicates my whole learning progress in the awesome Golang. The repository includes tons of data structures and algorithms implemented with Golang for study purpose!
