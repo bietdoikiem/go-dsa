@@ -2,6 +2,8 @@ package sorts
 
 import "constraints"
 
+// SelectionSort sorts the array using Selection Sort algorithm
+// Time Complexity: O(n^2) - Not Stable
 func SelectionSort[T constraints.Ordered](arr []T) {
 	var min int
 	for i := 0; i < len(arr); i++ {
