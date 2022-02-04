@@ -8,7 +8,7 @@ func maxProfit(prices []int) int {
 	sellIdx := 1
 	var cashOut int
 	max := 0 // Current max profit
-	for buyIdx < n && sellIdx < n {
+	for sellIdx < n {
 		if prices[sellIdx] < prices[buyIdx] {
 			buyIdx = sellIdx // Buy at the dip!
 		} else {
