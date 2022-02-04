@@ -11,6 +11,6 @@ algorithms implemented with Golang. Moreover, Leetcode problems are included as 
 
 ## Sections
 
-- [Algorithm](algo)
+- [Algorithms](algo)
 - [Data Structures](ds)
-- [Leetcode](leet)
+- [Leetcode Problems](leet)
