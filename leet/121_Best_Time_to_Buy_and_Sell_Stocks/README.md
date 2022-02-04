@@ -33,7 +33,7 @@ FUNCTION maxProfit(prices):
   sellIdx := 1
   max := 0
   cashOut := 0
-  FOR i := 0 TO n - 1:
+  FOR sellIdx < n:
     IF prices[sellIdx] < prices[buyIdx]:
       buyIdx = sellIdx
     ELSE:
@@ -41,5 +41,6 @@ FUNCTION maxProfit(prices):
       IF cashOut > max:
         max = cashOut
     sellIdx++
+  ENDFOR
   RETURN max
 ```
