@@ -1,4 +1,4 @@
-<p align="center"><img src="https://media.giphy.com/media/SlZJxTME5tFq9nN7G7/giphy.gif" /></p>
+<p align="center"><img src="https://i.ibb.co/yf4QMth/image.png" /></p>
 
 # No. 217 - Contains Duplicate
 
