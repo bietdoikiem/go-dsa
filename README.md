@@ -7,4 +7,10 @@
 
 Hello everyone, this is my repository which indicates my whole learning progress
 in the awesome Golang. The repository includes tons of data structures and
-algorithms implemented with Golang for study purpose! helo
+algorithms implemented with Golang. Moreover, Leetcode problems are included as well for practice purposes!
+
+## Sections
+
+- [Algorithm](algo)
+- [Data Structures](ds)
+- [Leetcode](leet)
