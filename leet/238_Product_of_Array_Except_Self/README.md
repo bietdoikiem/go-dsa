@@ -1,6 +1,6 @@
 <p align="center"><img width="350" src="https://i.ibb.co/ByS5Y3T/image.png" /></p>
 
-# No. 238 Product of Array Except Self
+# No. 238 - Product of Array Except Self
 
 ## Core Concept
 

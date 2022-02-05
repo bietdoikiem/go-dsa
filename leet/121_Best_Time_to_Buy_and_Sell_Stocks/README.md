@@ -1,6 +1,6 @@
 <p align="center"><img src="https://c.tenor.com/wjS2sXen8iMAAAAM/stonks-up-stongs.gif"></p>
 
-# Leetcode no. 121
+# No. 121 - Best Time to Buy and Sell Stocks
 
 ## Core concept
 
