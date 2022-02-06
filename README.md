@@ -1,7 +1,7 @@
 <p align="center">
 <img alt="go-gif" src="https://media.giphy.com/media/AGqeHzNwvq9wKRXGdq/giphy.gif" /></p>
 
-# Data Structures & Algorithms in Golang
+# Data Structures & Algorithms in Go
 
 ## Introduction
 
