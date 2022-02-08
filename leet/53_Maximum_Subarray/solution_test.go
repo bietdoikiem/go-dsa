@@ -3,6 +3,8 @@ package maximumsubarray
 import (
 	"fmt"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 /*
@@ -28,18 +30,27 @@ Input: nums = [1,2]
 Output: 3
 */
 func Test_maximumSubArray_1(t *testing.T) {
+	assert := assert.New(t)
 	// Test
 	nums := []int{-2, 1, -3, 4, -1, 2, 1, -5, 4}
-	fmt.Println("Max subarray sum:", maxSubArray(nums))
+	res := maxSubArray(nums)
+	fmt.Println("Max subarray sum:", res)
+	assert.Equal(6, res, "Maximum sum of subarray should be 6.")
 }
 
 func Test_maximumSubArray_2(t *testing.T) {
+	assert := assert.New(t)
 	nums := []int{1}
-	fmt.Println("Max subarray sum:", maxSubArray(nums))
+	res := maxSubArray(nums)
+	fmt.Println("Max subarray sum:", res)
+	assert.Equal(1, res, "Maximum sum of subarray should be 6.")
 }
 func Test_maximumSubArray_3(t *testing.T) {
+	assert := assert.New(t)
 	nums := []int{5, 4, -1, 7, 8}
-	fmt.Println("Max subarray sum:", maxSubArray(nums))
+	res := maxSubArray(nums)
+	fmt.Println("Max subarray sum:", res)
+	assert.Equal(23, res, "Maximum sum of subarray should be 6.")
 }
 
 func Test_maximumSubArray_4(t *testing.T) {
