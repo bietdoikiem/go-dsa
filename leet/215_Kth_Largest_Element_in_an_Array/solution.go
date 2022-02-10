@@ -9,7 +9,7 @@ import (
 // Time complexity: O(n*logn)
 // Space complexity: O(1)
 func findKthLargestBySorting(nums []int, k int) int {
-	// Sort the numsay (in-place)
+	// Sort the nums array (in-place)
 	sort.Ints(nums)
 	// Kth largest element can be found by len(nums) - k
 	return nums[len(nums)-k]
