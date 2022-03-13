@@ -6,7 +6,7 @@ In this section, we're going to go through list of Leetcode problems including d
 
 ## Problems
 
-List of Leetcode problems:
+List of Leetcode problems and their solutions:
 
 - [1. Two Sum](/leet/1_Two_Sum/)
 - [15. 3Sum](/leet/15_3Sum/)
