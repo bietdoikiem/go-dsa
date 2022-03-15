@@ -13,6 +13,7 @@ List of Leetcode problems and their solutions:
 - [15. 3Sum](/leet/15_3Sum/)
 - [33. Search in Rotated Sorted Array](/leet/33_Search_in_Rotated_Sorted_Array/)
 - [53. Maximum Subarray](/leet/53_Maximum_Subarray/)
+- [70. Climbing Stairs](/leet/70_Climbing_Stairs/)
 - [121. Best Time to Buy and Sell Stocks](/leet/121_Best_Time_to_Buy_and_Sell_Stocks/)
 - [146. LRU Cache](/leet/146_LRU_Cache/)
 - [152. Maximum Product Subarray](/leet/152_Maximum_Product_Subarray/)
