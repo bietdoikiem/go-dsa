@@ -91,7 +91,7 @@ Space Complexity: O(1)
 
 ```text
 FUNCTION findKthLargest(nums, k):
-  pi := quickSelect(nums, k, 0, length(k) - 1)
+  pi := quickSelect(nums, k, 0, length(nums) - 1)
   RETURN pi
 
 FUNCTION quickSelect(nums, k, l, r):
