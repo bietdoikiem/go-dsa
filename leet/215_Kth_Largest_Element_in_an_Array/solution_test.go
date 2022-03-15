@@ -39,3 +39,9 @@ func Test_findKthLargestByQuickSelect_2(t *testing.T) {
 	nums := []int{3, 2, 3, 1, 2, 4, 5, 5, 6}
 	assert.Equal(4, findKthLargestByQuickSelect(nums, 4), "2th largest element in the array should be 5.")
 }
+
+func Test_findKthLargestByQuickSelect_3(t *testing.T) {
+	assert := assert.New(t) // Assertion
+	nums := []int{2, 0, 1, 4, 3}
+	assert.Equal(3, findKthLargestByQuickSelect(nums, 2), "2th largest element in the array should be 3.")
+}
