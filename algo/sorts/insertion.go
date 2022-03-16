@@ -1,7 +1,7 @@
 package sorts
 
 import (
-	"constraints"
+	"golang.org/x/exp/constraints"
 )
 
 // InsertionSort sorts the elements of the array using Insertion Sort algorithm

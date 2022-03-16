@@ -1,8 +1,9 @@
 package sorts
 
 import (
-	"constraints"
 	"fmt"
+
+	"golang.org/x/exp/constraints"
 )
 
 // Swap swaps two elements based on their index

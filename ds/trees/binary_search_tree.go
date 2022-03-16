@@ -1,9 +1,10 @@
 package trees
 
 import (
-	"constraints"
 	"errors"
 	"fmt"
+
+	"golang.org/x/exp/constraints"
 )
 
 // TODO: Methods for Binary Search Tree

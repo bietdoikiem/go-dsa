@@ -1,6 +1,6 @@
 package sorts
 
-import "constraints"
+import "golang.org/x/exp/constraints"
 
 // BubbleSort sorts the array using Bubble Sort algorithm
 // Time complexity: O(n^2) - Not Stable

@@ -1,6 +1,6 @@
 package sorts
 
-import "constraints"
+import "golang.org/x/exp/constraints"
 
 // SelectionSort sorts the array using Selection Sort algorithm
 // Time Complexity: O(n^2) - Not Stable

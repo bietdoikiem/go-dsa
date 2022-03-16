@@ -1,7 +1,7 @@
 package sorts
 
 import (
-	"constraints"
+	"golang.org/x/exp/constraints"
 )
 
 // MergeSort sorts elements of arrrays (ascending order) using Merge Sort algorithm

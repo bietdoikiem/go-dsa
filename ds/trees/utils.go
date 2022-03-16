@@ -1,8 +1,9 @@
 package trees
 
 import (
-	"constraints"
 	"fmt"
+
+	"golang.org/x/exp/constraints"
 )
 
 func DisplayBSTInOrder[T constraints.Ordered](root *BSTNode[T]) {

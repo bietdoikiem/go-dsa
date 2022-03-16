@@ -1,6 +1,6 @@
 package sorts
 
-import "constraints"
+import "golang.org/x/exp/constraints"
 
 func QuickSort[T constraints.Ordered](arr []T) {
 	// Check empty
