@@ -11,6 +11,7 @@ List of Leetcode problems and their solutions:
 - [1. Two Sum](/leet/1_Two_Sum/)
 - [11. Container With Most Water](/leet/11_Container_With_Most_Water/)
 - [15. 3Sum](/leet/15_3Sum/)
+- [32. Longest Valid Parentheses](/leet/32_Longest_Valid_Parentheses/)
 - [33. Search in Rotated Sorted Array](/leet/33_Search_in_Rotated_Sorted_Array/)
 - [53. Maximum Subarray](/leet/53_Maximum_Subarray/)
 - [70. Climbing Stairs](/leet/70_Climbing_Stairs/)
