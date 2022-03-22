@@ -1,11 +1,11 @@
 package sets
 
 type DisjointSet[T any] struct {
-	items        []int
+	items        []T
 	connectivity []int
 }
 
-func NewDisjointSet[T any](items []int) DisjointSet[T] {
+func NewDisjointSet[T any](items []T) DisjointSet[T] {
 	// Fill connectivity array with items index
 	con := make([]int, len(items))
 	for i := 0; i < len(con); i++ {
@@ -30,5 +30,8 @@ func (ds *DisjointSet[T]) Union(i1, i2 int) {
 // Find finds and verifies if the two elements are connected with each other.
 // Time complexity: O(n)
 func (ds DisjointSet[T]) Find(i1, i2 int) bool {
-	return ds.items[i1] == ds.items[i2]
+	return ds.connectivity[i1] == ds.connectivity[i2]
 }
+
+/* Alternatives way to build a Disjoint Set */
+/// Consider the set of each element is the root of itself.
