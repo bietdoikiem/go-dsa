@@ -7,9 +7,9 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func Test_weightedDisjointSet_1(t *testing.T) {
+func Test_weightedDisjointSetUnion_1(t *testing.T) {
 	assert := assert.New(t)
-	wds := NewWeightedDisjointSet([]int{9, 10, 11, 12, 13, 14, 16})
+	wds := NewWeightedDisjointSetUnion([]int{9, 10, 11, 12, 13, 14, 16})
 	wds.Union(0, 1)
 	wds.Union(1, 2)
 	wds.Union(2, 3)

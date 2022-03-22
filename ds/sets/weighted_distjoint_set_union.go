@@ -1,13 +1,13 @@
 package sets
 
-type WeightedDisjointSet[T any] struct {
+type WeightedDisjointSetUnion[T any] struct {
 	items        []T
 	connectivity []int
 	weight       []int
 }
 
-// NewWeightedDisjointSet returns an instance of weighted distjoint subset with initialized array.
-func NewWeightedDisjointSet[T any](items []T) WeightedDisjointSet[T] {
+// NewWeightedDisjointSetUnion returns an instance of weighted distjoint subset with initialized array.
+func NewWeightedDisjointSetUnion[T any](items []T) WeightedDisjointSetUnion[T] {
 	n := len(items)
 	// Init connection and weight (or rank)
 	con := make([]int, n)
@@ -16,12 +16,12 @@ func NewWeightedDisjointSet[T any](items []T) WeightedDisjointSet[T] {
 		con[i] = i
 		w[i] = 1
 	}
-	return WeightedDisjointSet[T]{items: items, connectivity: con, weight: w}
+	return WeightedDisjointSetUnion[T]{items: items, connectivity: con, weight: w}
 }
 
 // root finds the root element of the current one
 // Time complexity: O(logn). Amortized cost: near constant (complementary with Union-by-Rank)
-func (ds WeightedDisjointSet[T]) root(i int) int {
+func (ds WeightedDisjointSetUnion[T]) root(i int) int {
 	for ds.connectivity[i] != i {
 		ds.connectivity[i] = ds.connectivity[ds.connectivity[i]] // Flatten till the grandparent node
 		i = ds.connectivity[i]
@@ -30,7 +30,7 @@ func (ds WeightedDisjointSet[T]) root(i int) int {
 }
 
 // Find finds union elements (with path compression)
-func (ds WeightedDisjointSet[T]) Find(i1 int, i2 int) bool {
+func (ds WeightedDisjointSetUnion[T]) Find(i1 int, i2 int) bool {
 	r1 := ds.root(i1)
 	r2 := ds.root(i2)
 	return r1 == r2
@@ -38,7 +38,7 @@ func (ds WeightedDisjointSet[T]) Find(i1 int, i2 int) bool {
 
 // Union unions two elements to the root of the other.
 // Rank is just the upperbound to prevent skewed tree, not the actual depth (in path compression method)
-func (ds *WeightedDisjointSet[T]) Union(i1 int, i2 int) {
+func (ds *WeightedDisjointSetUnion[T]) Union(i1 int, i2 int) {
 	r1 := ds.root(i1)
 	r2 := ds.root(i2)
 	// Check the weight
